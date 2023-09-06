@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package analytics;
+
+option java_multiple_files = true;
+option java_package = "com.tubitv.rpc.analytics";
+
+message TestEvent4 {
+    int32 str2 = 2;
+}

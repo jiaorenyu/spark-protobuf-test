@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package analytics;
+
+option java_multiple_files = true;
+option java_package = "com.tubitv.rpc.analytics";
+
+message TestEvent3 {
+    TestField str2 = 2;
+}
+
+enum EnumValue {
+    EnumX = 0;
+    EnumY = 1;
+}
+
+message TestField {
+    string value = 1;
+    EnumValue enumValue = 2;
+    oneof union {
+        TestUnion unionValue = 3;
+    }
+}
+
+message TestUnion {
+    int32 value = 1;
+}

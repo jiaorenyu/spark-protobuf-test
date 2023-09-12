@@ -2,9 +2,21 @@ syntax = "proto3";
 
 package analytics;
 
+import "google/protobuf/wrappers.proto";
+
 option java_multiple_files = true;
 option java_package = "com.tubitv.rpc.analytics";
 
+
+message UserEntity {
+    string device_id = 1;
+    google.protobuf.UInt32Value user_id = 2;
+}
+
 message TestEvent4 {
-    int32 str2 = 2;
+    int32 test_int = 1;
+    google.protobuf.BoolValue test_wrapper_bool = 2;
+    google.protobuf.UInt32Value test_wrapper_int = 3;
+    google.protobuf.StringValue test_wrapper_string = 4;
+    repeated UserEntity test_wrapper_in_message = 5;
 }
